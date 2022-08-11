@@ -1,0 +1,287 @@
+#include <iostream>
+#include <fstream>
+#include <ctime>
+#include <iomanip>
+
+using namespace std;
+
+template <typename T>
+T sub(T num1, T num2) {
+   return (num1 - num2);
+}
+
+void printlang();
+
+int main()
+{
+    ofstream output;
+
+    char loop;
+    int qty, total = 0, grandtotal = 0, input2, bayad;
+    int own;
+    char input;
+
+    output.open("ticket.txt");
+
+    output << "+-+-+-+ +-+-+-+-+-+ +-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+-+\n";
+    output << "|D|J|3| |L|U|C|K|Y| |W|I|N| |L|O|T|T|E|R|Y| |T|I|C|K|E|T|\n";
+    output << "+-+-+-+ +-+-+-+-+-+ +-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+-+\n";
+
+    time_t curr_time;
+	curr_time = time(NULL);
+
+	char *tm = ctime(&curr_time);
+	output << setw(20) << "DATE/TIME: " << tm;
+	output << "=====================================================\n";
+
+	cout << "                 _           |---||            _\n";
+    cout << "                 ||__________|DJ3||___________||\n";
+    cout << "                /_ _ _ _ _ _ |:._|'_ _ _ _ _ _ _\`.\n";
+    cout << "               /_ _DJ3 LUCKY WIN LOTTERY OUTLET _\:`.\n";
+    cout << "              /_ _ _ _BUY LOTTO TICKET ONLINE_ _ _\::`.\n";
+    cout << "             /:.___________________________________\:::`-._\n";
+    cout << "         _.-'_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _`::::::`-.._\n";
+    cout << "     _.-' _ YOUR CHANCE TO BE THE NEXT LUCKY WINNER!_ `:::::::::`-._\n";
+    cout << "   ,'_:._________________________________________________`:_.::::-';`\n";
+    cout << "    `.'/ || |:::::`.'/::::::::`.'/::::::::`.'/::::::|.`.'/.|     :|\n";
+    cout << "     ||  || |::::::||::::::::::||::::::::::||:::::::|..||..|     ||\n";
+    cout << "     ||  || |  __  || ::  ___  || ::  __   || ::    |..||;||     ||\n";
+    cout << "     ||  || | |::| || :: |:::| || :: |::|  || ::    |.|||:||_____||__\n";
+    cout << "     ||  || | |::| || :: |:::| || :: |::|  || ::    |.|||:||_|_|_||,(\n";
+    cout << "     ||_.|| | |::| || :: |:::| || :: |::|  || ::    |.'||..|    _||,|\n";
+    cout << "  .-'::_.:'.:-.--.-::--.-:.--:-::--.--.--.-::--.--.-:.-::,'.--.'_|| |\n";
+    cout << "   );||_|__||_|__|_||__|_||::|_||__|__|__|_||__|__|_|;-'|__|_(,' || '-\n";
+    cout << "   ||||  || |. . . ||. . . . . ||. . . . . ||. . . .|::||;''||   ||:'\n";
+    cout << "   ||||.;  _|._._._||._._._._._||._._._._._||._._._.|:'||,, ||,,\n";
+    cout << "   '''''           ''-         ''-         ''-         '''  '''\n";
+
+    system("pause");
+    system("cls");
+
+    printlang();
+    cout << "\tWELCOME TO DJ3 LUCKY WIN LOTTERY STORE\n";
+    printlang();
+    cout << "Do you want to buy a ticket?\n";
+    cout << "If yes type [Y] if no type [N]\n\n";
+
+    cout << "ENTER: ";
+    cin >> input;
+    system("pause");
+    system("cls");
+
+    do{
+    if(input == 'Y' || input == 'y')
+    {
+    printlang();
+    cout << "What ticket do you want to purchase?\n";
+    printlang();
+
+    cout << "\t\t    OPTIONS\n";
+    printlang();
+    cout << "[1] Lucky 6 DJ3 - PHP 30.00\n";
+    cout << "[2] Lucky 7 DJ3 - PHP 40.00\n";
+    cout << "[3] EZ-2 DJ3    - PHP 10.00\n";
+    cout << "[4] 4-Digit DJ3 - PHP 20.00\n";
+    printlang();
+
+    cout << "What ticket do you want to buy?\n";
+    cout << "(Choose lotto ticket number)\n\n";
+
+    cout << "ENTER : ";
+    cin >> input2;
+    system("pause");
+    system("cls");
+
+    if(input2 == 1)
+    {
+        printlang();
+        cout << "\t     You Picked Lucky 6 DJ3\n";
+        printlang();
+        cout << "How many tickets do you want to purchase?: ";
+        cin >> qty;
+        qty = qty + 1;
+
+        output << setw(32) << "Lucky 6 DJ3 " << endl;
+        output << "=====================================================\n";
+
+        for (int i = 1; i < qty; i++)
+        {
+            output << setw(30) << "Ticket no." << "[" << i << "]" << ": " << endl;
+            output << setw(34) << "-------------\n";
+            printlang();
+            cout << "Enter your lucky numbers for ticket no. "<< i << "\n\n";
+            for (int x = 0; x < 6; x++)
+                {
+                    cout << "Lotto no. " << x+1 <<": ";
+                    cin >> own;
+                    output << setw(31) << "Lotto no.: " << own << endl;
+                }
+                    output << "=====================================================\n";
+
+    }
+        total = 0;
+        grandtotal = 0;
+        total = 30 * (qty-1);
+        grandtotal += total;
+        printlang();
+        cout << "Total amount: " << total << endl;
+        cout << "Payment: ";
+        cin >> bayad;
+        cout << "Change: " << sub(bayad, grandtotal) << endl;
+        printlang();
+        cout << "Do you want to buy again?\n"
+             << "Type [Y] if Yes and [N] if No.\n\n"
+             << "Enter: ";
+             cin >> loop;
+             system("pause");
+             system("cls");
+    }
+
+    if(input2 == 2)
+    {
+        printlang();
+        cout << "\t     You Picked Lucky 7 DJ3\n";
+        printlang();
+        cout << "How many tickets do you want to purchase?: ";
+        cin >> qty;
+        qty = qty + 1;
+
+        output << setw(31) << "Lucky 7 DJ3" << endl;
+        output << "=====================================================\n";
+
+        for (int i = 1; i < qty; i++)
+        {
+            output << setw(30) << "Ticket no." << "[" << i << "]" << ": " << endl;
+            output << setw(34) << "-------------\n";
+            printlang();
+            cout << "Enter your lucky numbers for ticket no. "<< i << "\n\n";
+            for (int x = 0; x < 7; x++)
+                {
+                    cout << "Lotto no. " << x+1 <<": ";
+                    cin >> own;
+                    output << setw(31) << "Lotto no.: " << own << endl;
+                }
+                    output << "=====================================================\n";
+
+    }
+        total = 0;
+        grandtotal = 0;
+        total = 40 * (qty-1);
+        grandtotal += total;
+        printlang();
+        cout << "Total amount: " << total << endl;
+        cout << "Payment: ";
+        cin >> bayad;
+        cout << "Change: " << sub(bayad, grandtotal) << endl;
+        printlang();
+        cout << "Do you want to buy again?\n"
+             << "Type [Y] if Yes and [N] if No.\n\n"
+             << "Enter: ";
+             cin >> loop;
+             system("pause");
+             system("cls");
+    }
+
+    if(input2 == 3)
+    {
+        printlang();
+        cout << "\t        You Picked EZ-2 DJ3\n";
+        printlang();
+        cout << "How many tickets do you want to purchase?: ";
+        cin >> qty;
+        qty = qty + 1;
+
+        output << setw(30) << "EZ-2 DJ3" << endl;
+        output << "=====================================================\n";
+
+        for (int i = 1; i < qty; i++)
+        {
+            output << setw(30) << "Ticket no." << "[" << i << "]" << endl;
+            output << setw(34) << "-------------\n";
+            printlang();
+            cout << "Enter your lucky numbers for ticket no. "<< i << "\n\n";
+            for (int x = 0; x < 2; x++)
+                {
+                    cout << "Lotto no. " << x+1 <<": ";
+                    cin >> own;
+                    output << setw(31) << "Lotto no.: " << own << endl;
+                }
+                    output << "=====================================================\n";
+
+    }
+        total = 0;
+        grandtotal = 0;
+        total = 10 * (qty-1);
+        grandtotal += total;
+        printlang();
+        cout << "Total amount: " << total << endl;
+        cout << "Payment: ";
+        cin >> bayad;
+        cout << "Change: " << sub(bayad, grandtotal) << endl;
+        printlang();
+        cout << "Do you want to buy again?\n"
+             << "Type [Y] if Yes and [N] if No.\n\n"
+             << "Enter: ";
+             cin >> loop;
+             system("pause");
+             system("cls");
+    }
+
+    if(input2 == 4)
+    {
+        printlang();
+        cout << "\t      You Picked 4-Digit DJ3 \n";
+        printlang();
+        cout << "How many tickets do you want to purchase?: ";
+        cin >> qty;
+        qty = qty + 1;
+
+        output << setw(31) << "4-Digit DJ3" << endl;
+        output << "=====================================================\n";
+
+        for (int i = 1; i < qty; i++)
+        {
+            output << setw(30) << "Ticket no." << "[" << i << "]" << ": " << endl;
+            output << setw(34) << "-------------\n";
+            printlang();
+            cout << "Enter your lucky numbers for ticket no. "<< i << "\n\n";
+            for (int x = 0; x < 4; x++)
+                {
+                    cout << "Lotto no. " << x+1 <<": ";
+                    cin >> own;
+                    output << setw(31) << "Lotto no.: " << own << endl;
+                }
+                    output << "=====================================================\n";
+
+    }
+        total = 0;
+        grandtotal = 0;
+        total = 20 * (qty-1);
+        grandtotal += total;
+        printlang();
+        cout << "Total amount: " << total << endl;
+        cout << "Payment: ";
+        cin >> bayad;
+        cout << "Change: " << sub(bayad, grandtotal) << endl;
+        printlang();
+        cout << "Do you want to buy again?\n"
+             << "Type [Y] if Yes and [N] if No.\n\n"
+             << "Enter: ";
+             cin >> loop;
+             system("pause");
+             system("cls");
+    }
+    }
+    else if(input == 'N' || input == 'n'){
+        cout << "The program is closed.\n\n\n";
+    }
+    }
+    while(loop == 'Y' || loop == 'y');
+    cout << "\nTHANK YOU FOR JOINING AND BUYING IN DJ3 LUCKY WIN LOTTERY\n\n";
+
+    output.close();
+    return 0;
+}
+void printlang(){
+    cout << "=====================================================\n";
+}
